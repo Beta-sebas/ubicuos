@@ -1,0 +1,42 @@
+<div class="row d-flex justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow mb-5 bg-body rounded">
+            <img
+            src="https://picsum.photos/500/200?image=1"
+            class="card-img-top"
+            alt="..."
+            />
+            <div class="card-body">
+
+                <h6 class="card-header card-title text-center py-2">{{ nombre }}</h6>
+                <h6 class="card-subtitle mb-2 text-muted py-2">Sensor de Humedad y Temperatura</h6>
+                
+                <table class="table">
+                    <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Humedad</th>
+                          <th scope="col">Temperatura</th>
+                          <th scope="col">Fecha</th>
+                        </tr>
+                      </thead>
+                    <tbody>
+                        <tr *ngFor="let dato of datos; let i=index">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{ dato.humedad | number: '1.1-4' }}</td>
+                            <td>{{ dato.temperatura | number: '1.1-4' }}</td>
+                            <td>{{ dato.datecreated | date:'short' }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+            </div>
+
+            <div class="card-body text-center">
+                <button routerLink="/openlayer/markers" class="btn btn-secondary" type="button">Regresar</button>
+                
+            </div>
+    
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div id="map" class="map" #divMap>
+  <div id="popup" class="card ol-popup" >
+    <div class="card-body">
+      <app-popup [coordenadas]="coordenadas"> </app-popup>
+    </div>
+  </div>
+  <div id="popupR" class="text-center ol-popupR">
+    <div class="card-body">
+      <app-popupr 
+        [nombre]="name"
+        [cargando]="cargando"
+        [status]="status"
+        [idmarcador]="idmarcador"
+      ></app-popupr>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,63 @@
+<h5 class="card-title">{{ name }}</h5>
+
+<ng-container *ngIf="espera; else cargando">
+
+    <p class=" p-1 card-text">Cargando datos...</p>
+
+    <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+
+</ng-container>
+
+<ng-template #cargando>
+
+    <div>
+
+        <ng-container *ngIf="datos; else Inactivo">
+
+            <div class="d-flex justify-content-center align-items-center">
+    
+                <p class=" p-1 card-text">Estado del dispositivo</p>
+    
+                <p class="px-2"> 
+                    <span class=" badge rounded-pill bg-success">Activo</span>
+                </p>
+     
+            </div>
+
+            <a [routerLink]="['/openlayer/datos', id]" class="btn btn-info">Ver datos</a>
+                
+        </ng-container>
+
+        <ng-template #Inactivo>
+
+            <div class="d-flex justify-content-center align-items-center">
+    
+                <p class=" p-1 card-text">Estado del dispositivo</p>
+    
+                <p class="px-2"> 
+                    <span class=" badge rounded-pill bg-warning">Inactivo</span>
+                </p>
+
+            </div>
+
+            <p class=" p-1 card-text">Sin datos</p>
+            
+        </ng-template>
+        
+       
+    </div>
+    
+</ng-template>
+
+
+
+
+
+
+
+
+
+
+
